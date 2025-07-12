@@ -9,6 +9,7 @@ pipeline {
                 script {
                     echo 'Testing..'
                     dir("app") {
+                        sh 'npm install'
                         sh 'npm run test'
                     }
                 }
