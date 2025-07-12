@@ -15,7 +15,7 @@ pipeline {
                 }
             }
         }
-        stage('Build') {
+        stage('Build') {3.64.228.132
             steps {
                     script {
                         echo 'Building..'
@@ -26,8 +26,8 @@ pipeline {
             steps {
                     script {
                         echo 'Deploying....'
-                        def ec2Instance = 'ec2-user@3.64.228.132'
-                        def startContainers = 'docker compose up --detach'
+                        def ec2Instance = 'ec2-user@'
+                        def startContainers = 'docker-compose up --detach'
                         sshagent(['ec2-ssh-key-exercise']) {
                             sh '''
                                 mkdir -p ~/.ssh
