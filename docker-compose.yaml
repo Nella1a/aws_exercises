@@ -1,0 +1,5 @@
+services:
+  aws-exercise:
+    image: kanjamn/demo-app:aws-exercises-1.0
+    ports:
+      - 3000:3000
