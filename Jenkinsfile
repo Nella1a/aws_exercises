@@ -26,7 +26,7 @@ pipeline {
             steps {
                     script {
                         echo 'Deploying....'
-                        sshagent(['ec2-server-key']) {
+                        sshagent(['ec2-server-key-exercise']) {
                             sh 'scp docker-compose.yaml ec2-user@3.64.228.132:/home/ec2-user'
                             sh 'docker compose up --detach'
                         }
