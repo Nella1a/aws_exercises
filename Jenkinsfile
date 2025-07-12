@@ -15,7 +15,7 @@ pipeline {
                 }
             }
         }
-        stage('Build') {3.64.228.132
+        stage('Build') {
             steps {
                     script {
                         echo 'Building..'
