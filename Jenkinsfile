@@ -26,7 +26,7 @@ pipeline {
             steps {
                     script {
                         echo 'Deploying....'
-                        def ec2Instance = 'ec2-user@'
+                        def ec2Instance = 'ec2-user@3.64.228.132'
                         def startContainers = 'docker-compose up --detach'
                         sshagent(['ec2-ssh-key-exercise']) {
                             sh '''
