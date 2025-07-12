@@ -29,6 +29,10 @@ pipeline {
                         def ec2Instance = 'ec2-user@3.64.228.132'
                         def startContainers = 'docker compose up --detach'
                         sshagent(['ec2-ssh-key-exercise']) {
+                            sh '''
+                                mkdir -p ~/.ssh
+                                ssh-keyscan -H 3.64.228.132 >> ~/.ssh/known_hosts
+                            '''
                             sh "scp docker-compose.yaml ${ec2Instance}:/home/ec2-user"
                             sh "ssh -o StrictHostKeyChecking=no ${ec2Instance} ${startContainers}"
                         }
