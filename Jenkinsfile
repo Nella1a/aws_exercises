@@ -23,6 +23,7 @@ pipeline {
             }
             steps {
                     script {
+                        echo 'Testing jenkins build and deploy  trigger'
                         echo 'Building..'
                     }
             }
