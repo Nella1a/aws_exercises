@@ -16,6 +16,11 @@ pipeline {
             }
         }
         stage('Build') {
+            when {
+                expression {
+                    BRANCH_NAME == "main"
+                }
+            }
             steps {
                     script {
                         echo 'Building..'
@@ -23,6 +28,11 @@ pipeline {
             }
         }
         stage('Deploy') {
+            when {
+                expression {
+                    BRANCH_NAME == "main"
+                }
+            }
             steps {
                     script {
                         echo 'Deploying....'
